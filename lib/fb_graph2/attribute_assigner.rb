@@ -19,7 +19,7 @@ module FbGraph2
       self.raw_attributes = attributes
       Array(self.class.registered_attributes).each do |type, keys|
         keys.each do |key|
-          if attributes.include? key
+          if attributes.include? key.to_s
             raw = attributes[key]
             value = case type
             when :raw
